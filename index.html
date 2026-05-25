@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -39,16 +38,7 @@ p {
     color: #94a3b8;
 }
 
-/* TIMER */
-.timer {
-    font-size: 20px;
-    margin-bottom: 30px;
-    font-weight: bold;
-    color: #38bdf8;
-    letter-spacing: 1px;
-}
-
-/* ===== LOADER CAFÉ (inchangé) ===== */
+/* ===== LOADER CAFÉ ===== */
 
 .container {
   width: 300px;
@@ -245,9 +235,7 @@ p {
 
 <div class="wrapper">
     <h1>Site en maintenance</h1>
-    <p>On revient bientôt… probablement avec moins de bugs.</p>
-
-    <div class="timer" id="timer"></div>
+    <p>On revient bientôt… le temps de finir ce café ☕</p>
 
     <!-- LOADER CAFÉ -->
     <div class="container">
@@ -272,30 +260,6 @@ p {
         <div class="coffee-footer"></div>
     </div>
 </div>
-
-<script>
-// DATE FIXE (à modifier quand tu veux)
-const targetDate = new Date("2026-06-01T12:00:00").getTime();
-
-const timer = document.getElementById("timer");
-
-setInterval(() => {
-    const now = Date.now();
-    const diff = targetDate - now;
-
-    if (diff <= 0) {
-        timer.innerHTML = "Le site est de retour 🚀";
-        return;
-    }
-
-    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const m = Math.floor((diff / (1000 * 60)) % 60);
-    const s = Math.floor((diff / 1000) % 60);
-
-    timer.innerHTML = `${d}j ${h}h ${m}m ${s}s`;
-}, 1000);
-</script>
 
 </body>
 </html>
